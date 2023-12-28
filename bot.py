@@ -28,13 +28,14 @@ def run_bot():
         if message.author == client.user:
             return
 
-        username = str(message.author)
         user_message = str(message.content)
-        channel = str(message.channel)
-        # general debugging, is useful
-        print(f"{username} said: '{user_message}' in ({channel})")
 
         if user_message.startswith("!scp"):
+            username = str(message.author)
+            channel = str(message.channel)
+            # general debugging, is useful
+            print(f"{username} said: '{user_message}' in ({channel})")
+
             user_message = user_message[4:]
             await send_message(message, user_message)
 
