@@ -31,11 +31,11 @@ def run_bot():
         username = str(message.author)
         user_message = str(message.content)
         channel = str(message.channel)
-
+        # general debugging, is useful
         print(f"{username} said: '{user_message}' in ({channel})")
 
-        if user_message[0] == '!':
-            user_message = user_message[1:]
+        if user_message.startswith("!scp"):
+            user_message = user_message[4:]
             await send_message(message, user_message)
 
     client.run(TOKEN)

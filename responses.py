@@ -1,6 +1,9 @@
-def handle_response(message):
-    p_message = message.lower()
+import re
 
-    if "scp" in p_message:
-        l_message = p_message.split()
-        return "https://scp-wiki.wikidot.com/scp-" + l_message[1]
+
+def handle_response(message):
+    p_message = message.lower()     # not really necessary, but I'll keep it if I want to add more commands
+
+    l_message = re.split(r"[, \-!?:#]+", p_message)
+    # print(l_message) - for debugging
+    return "https://scp-wiki.wikidot.com/scp-" + l_message[-1]
