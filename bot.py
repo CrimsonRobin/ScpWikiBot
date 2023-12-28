@@ -10,6 +10,8 @@ async def send_message(message, user_message):
     except Exception as e:
         print(e)
 
+        await message.channel.send(f'Error {e} has occurred.')
+
 
 def run_bot():
     intents = discord.Intents.default()
