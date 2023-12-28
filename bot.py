@@ -9,8 +9,7 @@ async def send_message(message, user_message):
         await message.channel.send(response)
     except Exception as e:
         print(e)
-
-        await message.channel.send(f'Error {e} has occurred.')
+        await message.channel.send(f"Error: '{e}' has occurred.")
 
 
 def run_bot():
